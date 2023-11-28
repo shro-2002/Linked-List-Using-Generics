@@ -17,6 +17,25 @@ public class LinkedList<T extends Comparable<T>> {
 	 * 
 	 * @return : void
 	 * 
+	 * @Description: Inserting a new node at the beginning of the Linked List
+	 */
+	public void insertAtbegin(T data) {
+		Node<T> newNode = new Node<T>(data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+
+	}
+
+	/*
+	 * @params: T data
+	 * 
+	 * @return : void
+	 * 
 	 * @Description: Inserting a new node at the end of the Linked List
 	 */
 	public void insertAtEnd(T data) {
@@ -33,11 +52,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
-	 * @params: T data
+	 * @params: T data, T val
 	 * 
 	 * @return : void
 	 * 
-	 * @Description: Inserting a new node at the end of the Linked List
+	 * @Description: Inserting a new node in between the nodes of the Linked List
 	 */
 
 	public void insertBetween(T data, T val) {
@@ -55,6 +74,14 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
+	public void pop() {
+		if (head == null)
+			return;
+
+		head = head.next;
+
+	}
+
 	/*
 	 * @params: void
 	 * 
@@ -69,25 +96,6 @@ public class LinkedList<T extends Comparable<T>> {
 			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
-	}
-
-	/*
-	 * @params: T data
-	 * 
-	 * @return : void
-	 * 
-	 * @Description: Inserting a new node at the end of the Linked List
-	 */
-	public void insertAtbegin(T data) {
-		Node<T> newNode = new Node<T>(data);
-		if (head == null) {
-			head = newNode;
-			return;
-		}
-
-		newNode.next = head;
-		head = newNode;
-
 	}
 
 	public static void main(String[] args) {
@@ -116,6 +124,11 @@ public class LinkedList<T extends Comparable<T>> {
 		list.insertBetween(30, 56);
 		list.display();
 		System.out.println();
+
+		// Delete Node
+		System.out.println("Delete First Node");
+		list.pop();
+		list.display();
 
 	}
 
