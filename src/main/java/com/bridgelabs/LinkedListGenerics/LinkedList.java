@@ -59,16 +59,20 @@ public class LinkedList<T extends Comparable<T>> {
 	 * @Description: Inserting a new node in between the nodes of the Linked List
 	 */
 
-	public void insertBetween(T data, T val) {
+	public void insertAfter(T data, T newval) {
 		Node<T> newNode = new Node<T>(data);
 		if (head == null) {
 			head = newNode;
 			return;
 		}
 		Node<T> temp = head;
-		while (temp.data != val) {
+		while (temp.next != null && temp.data != newval) {
 			temp = temp.next;
 		}
+		if (temp.next == null && temp.data != newval) {
+			return;
+		}
+
 		newNode.next = temp.next;
 		temp.next = newNode;
 
@@ -115,19 +119,36 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
-	public boolean search(T val) {
+	public void deleteAfter(T newval) {
+
+		if (head == null) {
+			return;
+		}
+		Node<T> temp = head;
+		Node<T> prev = head;
+		while (temp != null && temp.data != newval) {
+			prev = temp;
+			temp = temp.next;
+		}
+		if (temp == null)
+			return;
+		prev.next = temp.next;
+
+	}
+
+	public T search(T val) {
 		if (head == null)
-			return false;
+			return null;
 
 		Node<T> temp = head;
 
 		while (temp.next != null) {
 			if (temp.data.equals(val))
-				return true;
+				return temp.data;
 			temp = temp.next;
 		}
 
-		return false;
+		return null;
 
 	}
 
@@ -170,7 +191,7 @@ public class LinkedList<T extends Comparable<T>> {
 
 		// Insert in Between
 		System.out.println("Insert in Between");
-		list.insertBetween(30, 56);
+		list.insertAfter(30, 56);
 		list.display();
 		System.out.println();
 
@@ -184,6 +205,13 @@ public class LinkedList<T extends Comparable<T>> {
 		System.out.println("Delete Last Node");
 		list.popLast();
 		list.display();
+		System.out.println();
+
+		// Insert in Between
+		System.out.println("Insert After");
+		list.insertAfter(40, 30);
+		list.display();
+		System.out.println();
 
 	}
 
