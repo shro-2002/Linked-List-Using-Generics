@@ -115,6 +115,22 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
+	public boolean search(T val) {
+		if (head == null)
+			return false;
+
+		Node<T> temp = head;
+
+		while (temp.next != null) {
+			if (temp.data.equals(val))
+				return true;
+			temp = temp.next;
+		}
+
+		return false;
+
+	}
+
 	/*
 	 * @params: void
 	 * 
