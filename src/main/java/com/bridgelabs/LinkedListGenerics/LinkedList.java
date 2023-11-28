@@ -119,17 +119,26 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
-	public void deleteAfter(T newval) {
+	public void deleteGivenNode(T newval) {
 
-		if (head == null) {
+		if (head == null)
+			return;
+
+		if (head.data == newval) {
+			head = head.next;
 			return;
 		}
+
 		Node<T> temp = head;
 		Node<T> prev = head;
-		while (temp != null && temp.data != newval) {
+
+		while (temp != null) {
+			if (temp.data == newval)
+				break;
 			prev = temp;
 			temp = temp.next;
 		}
+
 		if (temp == null)
 			return;
 		prev.next = temp.next;
@@ -142,7 +151,7 @@ public class LinkedList<T extends Comparable<T>> {
 
 		Node<T> temp = head;
 
-		while (temp.next != null) {
+		while (temp != null) {
 			if (temp.data.equals(val))
 				return temp.data;
 			temp = temp.next;

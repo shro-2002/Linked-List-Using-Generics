@@ -21,8 +21,30 @@ public class LinkedListTest {
 	@Test
 	public void testInsertAfter() {
 
+		// Insert in beginning
+
+		list.insertAtbegin(70);
+		list.insertAtbegin(30);
+		list.insertAtbegin(56);
+
 		Integer nodedata = list.search(30);
+		assertNotNull(list.search(30));
 		list.insertAfter(nodedata, 40);
+
+	}
+
+	@Test
+	public void testDeleteAfter() {
+
+		// Insert in beginning
+
+		list.insertAtbegin(70);
+		list.insertAtbegin(30);
+		list.insertAtbegin(56);
+
+		Integer nodedata = list.search(56);
+		assertNotNull(list.search(56));
+		list.deleteGivenNode(nodedata);
 
 	}
 
