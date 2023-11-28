@@ -43,9 +43,28 @@ public class LinkedList<T extends Comparable<T>> {
 	public void display() {
 		Node<T> temp = head;
 		while (temp != null) {
-			System.out.print(temp.data + " ");
+			System.out.println(temp.data + " ");
 			temp = temp.next;
 		}
+	}
+
+	/*
+	 * @params: T data
+	 * 
+	 * @return : void
+	 * 
+	 * @Description: Inserting a new node at the end of the Linked List
+	 */
+	public void insertAtbegin(T data) {
+		Node<T> newNode = new Node<T>(data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+
 	}
 
 	public static void main(String[] args) {
@@ -53,10 +72,9 @@ public class LinkedList<T extends Comparable<T>> {
 
 		LinkedList<Integer> list = new LinkedList<Integer>();
 
-		list.insert(56);
-		list.insert(30);
-		list.insert(70);
-
+		list.insertAtbegin(70);
+		list.insertAtbegin(30);
+		list.insertAtbegin(56);
 		list.display();
 	}
 
