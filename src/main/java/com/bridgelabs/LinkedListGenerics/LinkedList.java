@@ -74,11 +74,44 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
+	/*
+	 * @params: None
+	 * 
+	 * @return : void
+	 * 
+	 * @Description: Deleting first node in the Linked List
+	 */
+
 	public void pop() {
 		if (head == null)
 			return;
 
 		head = head.next;
+
+	}
+
+	/*
+	 * @params: None
+	 * 
+	 * @return : void
+	 * 
+	 * @Description: Deleting last node in the Linked List
+	 */
+
+	public void popLast() {
+		if (head == null)
+			return;
+
+		if (head.next == null)
+			return;
+
+		Node<T> temp = head;
+
+		while (temp.next.next != null) {
+			temp = temp.next;
+		}
+
+		temp.next = null;
 
 	}
 
@@ -125,9 +158,15 @@ public class LinkedList<T extends Comparable<T>> {
 		list.display();
 		System.out.println();
 
-		// Delete Node
+		// Delete First Node
 		System.out.println("Delete First Node");
 		list.pop();
+		list.display();
+		System.out.println();
+
+		// Delete last Node
+		System.out.println("Delete Last Node");
+		list.popLast();
 		list.display();
 
 	}
