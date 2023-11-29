@@ -3,7 +3,7 @@ package com.bridgelabs.LinkedListGenerics;
 /*
  * @CLass Variables: head
  * 
- * @Class Methods: insert, display
+ * @Class Methods: insertAtbegin,insertAtEnd,insertAfter,pop,popLast,deleteGivenNode,search, display
  * 
  * @Description: Create a linked list using Generics in Java
  */
@@ -79,11 +79,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
+	 * @Description: Deleting first node in the Linked List
+	 * 
 	 * @params: None
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Deleting first node in the Linked List
 	 */
 
 	public void pop() {
@@ -119,6 +119,13 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
+	/*
+	 * @Description: Deleting a Given key in the Linked List
+	 * 
+	 * @params: None
+	 * 
+	 * @return : void
+	 */
 	public void deleteGivenNode(T newval) {
 
 		if (head == null)
@@ -145,6 +152,13 @@ public class LinkedList<T extends Comparable<T>> {
 
 	}
 
+	/*
+	 * @Description: Searching for a Given key in the Linked List
+	 * 
+	 * @params: None
+	 * 
+	 * @return : void
+	 */
 	public T search(T val) {
 		if (head == null)
 			return null;
@@ -175,53 +189,6 @@ public class LinkedList<T extends Comparable<T>> {
 			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Linked Lists Using Generics");
-
-		LinkedList<Integer> list = new LinkedList<Integer>();
-
-		// Insert in beginning
-		System.out.println("Insert in beginning");
-		list.insertAtbegin(70);
-		list.insertAtbegin(30);
-		list.insertAtbegin(56);
-		list.display();
-		System.out.println();
-
-		// Insert in End
-		System.out.println("Insert in End");
-		list.insertAtEnd(56);
-		list.insertAtEnd(30);
-		list.insertAtEnd(70);
-		list.display();
-		System.out.println();
-
-		// Insert in Between
-		System.out.println("Insert in Between");
-		list.insertAfter(30, 56);
-		list.display();
-		System.out.println();
-
-		// Delete First Node
-		System.out.println("Delete First Node");
-		list.pop();
-		list.display();
-		System.out.println();
-
-		// Delete last Node
-		System.out.println("Delete Last Node");
-		list.popLast();
-		list.display();
-		System.out.println();
-
-		// Insert in Between
-		System.out.println("Insert After");
-		list.insertAfter(40, 30);
-		list.display();
-		System.out.println();
-
 	}
 
 }
