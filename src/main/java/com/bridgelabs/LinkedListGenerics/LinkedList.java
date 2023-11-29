@@ -13,11 +13,11 @@ public class LinkedList<T extends Comparable<T>> {
 	private Node<T> head;
 
 	/*
+	 * @Description: Inserting a new node at the beginning of the Linked List
+	 * 
 	 * @params: T data
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Inserting a new node at the beginning of the Linked List
 	 */
 	public void insertAtbegin(T data) {
 		Node<T> newNode = new Node<T>(data);
@@ -32,11 +32,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
+	 * @Description: Inserting a new node at the end of the Linked List
+	 * 
 	 * @params: T data
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Inserting a new node at the end of the Linked List
 	 */
 	public void insertAtEnd(T data) {
 		Node<T> newNode = new Node<T>(data);
@@ -52,11 +52,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
+	 * @Description: Inserting a new node in between the nodes of the Linked List
+	 * 
 	 * @params: T data, T val
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Inserting a new node in between the nodes of the Linked List
 	 */
 
 	public void insertAfter(T data, T newval) {
@@ -95,11 +95,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
+	 * @Description: Deleting last node in the Linked List
+	 * 
 	 * @params: None
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Deleting last node in the Linked List
 	 */
 
 	public void popLast() {
@@ -122,7 +122,7 @@ public class LinkedList<T extends Comparable<T>> {
 	/*
 	 * @Description: Deleting a Given key in the Linked List
 	 * 
-	 * @params: None
+	 * @params: T
 	 * 
 	 * @return : void
 	 */
@@ -155,9 +155,9 @@ public class LinkedList<T extends Comparable<T>> {
 	/*
 	 * @Description: Searching for a Given key in the Linked List
 	 * 
-	 * @params: None
+	 * @params:T
 	 * 
-	 * @return : void
+	 * @return : T
 	 */
 	public T search(T val) {
 		if (head == null)
@@ -176,11 +176,11 @@ public class LinkedList<T extends Comparable<T>> {
 	}
 
 	/*
+	 * @Description: Displaying the Linked List
+	 * 
 	 * @params: void
 	 * 
 	 * @return : void
-	 * 
-	 * @Description: Displaying the Linked List
 	 */
 
 	public void display() {
