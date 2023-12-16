@@ -1,3 +1,12 @@
+
+# LinkedListGenerics Project
+
+## Introduction
+
+Welcome to the LinkedListGenerics project! This project demonstrates the implementation of a generic linked list in Java, providing various functionalities such as inserting nodes, deleting nodes, searching, and creating a sorted linked list.
+
+
+
 | Branch                                      | Description                                     |
 | ------------------------------------------- | ----------------------------------------------- |
 | [UC_1_Create_a_Linked_List](https://github.com/shro-2002/Linked-List-Using-Generics/tree/UC_1_Create_a_Linked_List) | Initial branch for creating a simple linked list. |
